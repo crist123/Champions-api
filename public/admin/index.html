@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Admin</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content-container">
+      <div class="active-users-panel" id="active-user-container" style="display: none;">
+        <h3 class="panel-title">Usuarios viendo:</h3>
+      </div>
+      <div class="video-chat-container">
+
+        <!-- <section class="select">
+          <label for="typeTrans">Tipo de transmision: </label>
+          <select id="typeTrans">
+            <option value="0" selected>Video / Camera</option>
+            <option value="1">Video</option>
+          </select>
+        </section>
+
+        <section class="select" id="path-section" style="display: none">
+          <label for="audioSource">Path del video: </label>
+          <input type="text" id="path" placeholder="path">
+        </section> -->
+
+        <section class="select" id="audio-section">
+          <label for="audioSource">Dispositivo de audio: </label>
+          <select id="audioSource"></select>
+        </section>
+
+        <section class="select" id="video-section">
+          <label for="videoSource">Dispositivo de video: </label>
+          <select id="videoSource"></select>
+        </section>
+
+        <div class="video-container" style="display: flex;">
+          <video class="local-video" playsinline autoplay muted>
+            <!-- <source src="Beach.mp4" type="video/mp4"> -->
+          </video>
+        </div>
+        <div class="btn-init">
+          <input type="text" id="name" placeholder="Nombre">
+          <button onclick="initStream()" id="btn-init">Iniciar transmision</button>
+          <button onclick="stopStream()" id="btn-stop" style="display: none">Detener transmision</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>
