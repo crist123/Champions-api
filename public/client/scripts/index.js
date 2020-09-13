@@ -213,7 +213,7 @@ function randomString(length) {
 }
 
 // Obtiene la lista de videos disponibles
-fetch('http://localhost:5000/api/rooms')
+fetch('http://localhost:5000/v1/rooms')
     .then((response) => {
         return response.json();
     })
