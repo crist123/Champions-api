@@ -1,5 +1,5 @@
 import { Server as SocketIOServer, Socket } from "socket.io";
-import { Common } from '../src/helper/common';
+import { Common } from './helper/common';
 
 export class ChampionSocket {
 

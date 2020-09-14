@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Api champions app",
   "scripts": {
-    "build-ts": "rm -r dist && tsc --sourceMap false",
+    "build-ts": "rm -rf dist && tsc --sourceMap false",
     "start": "npm run build-ts && node dist/index.js",
     "start:dev": "npm run build-ts && export ENV=dev && node dist/index.js",
     "start:prod": "npm run build-ts && export ENV=prod && node dist/index.js"
