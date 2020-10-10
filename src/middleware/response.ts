@@ -12,12 +12,12 @@ export class ResponseMiddleware {
       case 'ok':
         delete data.status;
         delete data.code_status;
-        res.status(statusCode || 400).json(this.Ok(data));
+        res.status(statusCode || 200).json(this.Ok(data));
         break;
       case 'create':
         delete data.status;
         delete data.code_status;
-        res.status(statusCode || 401).json(this.OkCreate(data));
+        res.status(statusCode || 201).json(this.OkCreate(data));
         break;
       case 'error':
         delete data.status;
