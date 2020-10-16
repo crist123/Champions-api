@@ -1,6 +1,3 @@
-# Champions-api
-
-# Para generar la bases de datos y SQL
 create SCHEMA `champions` ;
 
 use champions;
@@ -43,10 +40,3 @@ CREATE TABLE IF NOT EXISTS role_users (
 INSERT INTO `users` VALUES ('65b0bf44-3481-4102-907e-3b2da3bf99f7','Admin','Champion','admin@gmail.com','U2FsdGVkX1+ZH/ruP++l4WU9l+QAPRlf4bs1yLgB1RA=',NULL,NULL,'3502357362',1,'2020-09-13 21:04:32','2020-09-13 21:34:40','65b0bf44-3481-4102-907e-3b2da3bf99f7');
 INSERT INTO `role` VALUES ('78dde660-78af-46c2-817f-75399fb3f7a4','admin','Admin','Admin',NULL,'2020-09-13 20:59:09','2020-09-13 20:59:09'),('78dde660-78af-46c2-817f-75399fb3f7a5','client','Cliente','Cliente',NULL,'2020-09-13 20:59:09','2020-09-13 20:59:09');
 INSERT INTO `role_users` VALUES ('eb9df32d-1fbe-4a9f-a11a-fcb6cab0b010','65b0bf44-3481-4102-907e-3b2da3bf99f7','78dde660-78af-46c2-817f-75399fb3f7a4','65b0bf44-3481-4102-907e-3b2da3bf99f7','2020-09-13 21:04:32','2020-09-13 21:04:32');
-
-# Json para probar en postman se encuentra en la ruta /postman json
-Champions API.collection tambien ahí hay una copia de .sql
-
-# Creacion de usuarios por la WEB
-
-con localhost:5000/admin/ se puede visualizar prueba

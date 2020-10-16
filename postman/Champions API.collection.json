@@ -1,0 +1,579 @@
+{
+	"info": {
+		"_postman_id": "3921e90c-8f06-4bb4-8cab-fbe41cbecda9",
+		"name": "Champions API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Obtiene usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/user",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/user/65b0bf44-3481-4102-907e-3b2da3bf99f7",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"user",
+								"65b0bf44-3481-4102-907e-3b2da3bf99f7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Andres\",\n    \"lastname\": \"Fajardo\",\n    \"email\": \"cristianfajardo4@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"3502357362\",\n    \"role_id\": \"78dde660-78af-46c2-817f-75399fb3f7a4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/user",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": \"65b0bf44-3481-4102-907e-3b2da3bf99f7\",\n\t\"name\":\"Andres\",\n\t\"lastname\":\"Fajardo 2\",\n\t\"mobile_phone\":\"3502357362\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/user",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/user/a27030d1-fc37-4783-8f60-6782d0067133",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"user",
+								"a27030d1-fc37-4783-8f60-6782d0067133"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener usuario por token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/user/token",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"user",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{token}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "Authorization",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dfd5dfe0-439c-4908-ba67-f79cd7b715d9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e4a1ce02-5875-4205-8c63-b99477f69620",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Inicio de sesión",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"cristianfajardo3@gmail.com\",\n\t\"password\": \"qwerty\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/login/signin",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"login",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registro de usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nuevo\",\n    \"lastname\": \"usuario\",\n    \"email\": \"aaaaaaaa@gmail.com\",\n    \"password\": \"qwerty\",\n    \"phone\": \"3502357362\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/login/signup",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"login",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "apikey",
+				"apikey": [
+					{
+						"key": "value",
+						"value": "{{token}}",
+						"type": "string"
+					},
+					{
+						"key": "key",
+						"value": "Authorization",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9c0e5695-2bdb-4c84-86a5-3105ef8ffbf5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f3af7d4-6355-446e-bb96-08acad0f1151",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Todos los roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/role",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rol por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/role/78dde660-78af-46c2-817f-75399fb3f7a4",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role",
+								"78dde660-78af-46c2-817f-75399fb3f7a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"operator\",\n    \"description\": \"Role para operadores\",\n    \"name\": \"Operador\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/role",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Role",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"2f3bcbb5-c59f-40b1-854d-e5480ee0a3d6\",\n    \"description\": \"Role test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/role",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/role/da68b682-0fc2-4b27-a9f4-1cfa4b9edb7d",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role",
+								"da68b682-0fc2-4b27-a9f4-1cfa4b9edb7d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233269a4-7c0f-4a07-9530-e43358dc4dda",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ac8081fc-a09e-4e89-ac1c-86f324382be6",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Asignación rol",
+			"item": [
+				{
+					"name": "Asignar role a un usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"12469523-d145-406d-9389-21af33ffb155\",\n    \"role_id\": \"1437210e-e5f1-411c-8e1b-b00155cc1631\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/role/user",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar asignación de Role a usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"e3a240b1-0a88-4f3f-8c51-ab2d6fcfb1b3\",\n    \"user_id\": \"12469523-d145-406d-9389-21af33ffb155\",\n    \"role_id\": \"7060ce96-c864-4de8-bf27-a055d7a24931\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_api}}/role/user",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de roles asignados a usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/role/user",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ver un usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_api}}/role/user/02d8f50f-f578-4def-86bf-338889916c2e",
+							"host": [
+								"{{url_api}}"
+							],
+							"path": [
+								"role",
+								"user",
+								"02d8f50f-f578-4def-86bf-338889916c2e"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3f42ede4-620c-4514-8f28-a074aaa9bde7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc8d739c-8026-4630-9785-d8981bcdd0a8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{token}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "988481e0-6d9e-4f2d-b5b1-5d2e4b120066",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5b9680bb-a4f3-417e-8c96-bc6b683cd502",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
